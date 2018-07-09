@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3-Column-Layout</title>
+    <style>
+        .container {
+            width: 400px;
+            height: 50px;
+            background-color: gray;
+            margin: 100px auto;
+        }
+
+        .container>div {
+            height: 100%;
+        }
+
+        .left {
+            background-color: forestgreen;
+            width: 100px;
+        }
+
+        .center {
+            background-color: aqua;
+        }
+
+        .right {
+            background-color: hotpink;
+            width: 100px;
+        }
+
+        /* The following are different */
+
+        /* flex */
+
+        .container {
+            display: flex;
+        }
+
+        .center {
+            flex-grow: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">left</div>
+        <div class="center">center</div>
+        <div class="right">right</div>
+    </div>
+
+</body>
+
+</html>
