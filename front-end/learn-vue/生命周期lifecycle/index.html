@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">{{text}}</div>
+    <script src="https://cdn.bootcss.com/vue/2.5.16/vue.js"></script>
+    <script>
+        function log(groupTitle, thisArg) {
+            const len = 15;
+            console.group(groupTitle);
+            console.log(`%c${'$el'.padEnd(len)}: %o`, 'color:red', thisArg.$el);
+            console.log(`%c${'text/$data.text'.padEnd(len)}: %o`, 'color:green', thisArg.text);
+            console.log(`%c${'method'.padEnd(len)}: %o`, 'color:green', thisArg.method);
+            console.log(`%c${'computed'.padEnd(len)}: %o`, 'color:green', thisArg.compute);
+            console.groupEnd();
+        }
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                text: 'some text',
+            },
+            beforeCreate() {
+                log('beforeCreate', this);
+            },
+            created() {
+                log('created', this);
+            },
+            beforeMount() {
+                log('beforeMount', this);
+            },
+            mounted() {
+                log('mounted', this);
+            },
+            beforeUpdate() {
+                log('beforeUpdate', this);
+            },
+            updated() {
+                log('updated', this);
+
+            },
+            methods: {
+                method() { console.log('medthod'); }
+            },
+            computed: {
+                compute() { return 'computed'; }
+            }
+        });
+    </script>
+</body>
+
+</html>
