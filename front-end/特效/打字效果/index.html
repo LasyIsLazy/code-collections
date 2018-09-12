@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>纯CSS实现打字特效</title>
+    <style>
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+        }
+
+        @keyframes blink-caret {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        .typing-base {
+            font-size: 20px;
+            height: 30px;
+            overflow: hidden;
+            white-space: nowrap;
+            /* 需要选择一个每个字等宽的字体 */
+            font-family: monospace;
+
+            border-right: 2px solid black;
+        }
+
+        .char-typing {
+            width: 18ch;
+            /* steps与字数相同 */
+            animation: typing 5s steps(18), blink-caret 2s infinite;
+        }
+
+
+        .chinese-typing {
+            /* 一个中文文字占两个ch */
+            width: 10ch;
+
+            /* steps与字数相同 */
+            animation: typing 5s steps(5), blink-caret 2s infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="typing-base char-typing">This is from Lasy.</p>
+    <p class="typing-base chinese-typing">这是五个字</p>
+</body>
+
+</html>
