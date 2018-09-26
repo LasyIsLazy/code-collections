@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clearance and margin-collapse</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 200px;
+            height: 50px;
+            border: 1px solid;
+            box-sizing: border-box;
+        }
+
+        .div1 {
+            margin-bottom: 10px;
+            background-color: darkcyan;
+        }
+
+        .div2 {
+            margin-top: 50px;
+            background-color: darkgreen;
+            clear: left;
+        }
+
+        .float {
+            float: left;
+            height: 50px;
+        }
+
+        .line {
+            border-top: 1px solid crimson;
+            width: 100%;
+            height: 0;
+            position: absolute;
+            top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div1">1</div>
+    <div class="float"></div>
+    <div class="div2">2</div>
+    <div class="line"></div>
+</body>
+
+</html>
