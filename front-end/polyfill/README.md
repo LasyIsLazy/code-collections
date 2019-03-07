@@ -1,0 +1,1 @@
+polyfill 文件夹下的文件是对 JavaScript 原生的函数的模拟实现（并非完善的 polyfill），为了理解这些函数的原理。
